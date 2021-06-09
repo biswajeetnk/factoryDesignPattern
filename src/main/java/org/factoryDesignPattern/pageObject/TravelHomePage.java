@@ -1,10 +1,11 @@
-package org.singleDesignPattern.pageObject;
+package org.factoryDesignPattern.pageObject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.singleDesignPattern.abstractComponent.SearchFlightAvail;
-import org.singleDesignPattern.pageComponents.FooterNav;
-import org.singleDesignPattern.pageComponents.NavigationBar;
+import org.factoryDesignPattern.abstractComponent.SearchFlightAvail;
+import org.factoryDesignPattern.abstractComponent.StrategyFactor;
+import org.factoryDesignPattern.pageComponents.FooterNav;
+import org.factoryDesignPattern.pageComponents.NavigationBar;
 
 public class TravelHomePage
 {
@@ -25,8 +26,6 @@ public class TravelHomePage
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
     }
 
-    //to access this method from any test code should be TravelHomePage.getNavigationBar();
-    //to access this method from any test code should be TravelHomePage.getNavigationBar().anyMethodsInNavigationBar.java
     public NavigationBar getNavigationBar()
     {
         return new NavigationBar(driver, navigationBar);
@@ -37,11 +36,13 @@ public class TravelHomePage
         return new FooterNav(driver, footer);
     }
 
-    public void setBookingStrategy(SearchFlightAvail searchFlightAvail)
+    public void setBookingStrategy(String strategyType)
     //since SearchFlightAvail is the common interface for all the classes in pageComponenets
     // hence we can use it for MultiTrip and RoundTrip also.
     //the strategy to use either MultiTrip or RoundTrip is set in DemoTest.java class
     {
+        StrategyFactor strategyFactor = new StrategyFactor(driver);
+        searchFlightAvail = strategyFactor.createStrategy(strategyType);
         this.searchFlightAvail = searchFlightAvail;
     }
 

@@ -1,6 +1,6 @@
-package org.singleDesignPattern.pageComponents;
+package org.factoryDesignPattern.pageComponents;
 
-import org.singleDesignPattern.abstractComponent.AbstractComponent;
+import org.factoryDesignPattern.abstractComponent.AbstractComponent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

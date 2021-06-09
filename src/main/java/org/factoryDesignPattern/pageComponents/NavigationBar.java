@@ -1,8 +1,8 @@
-package org.singleDesignPattern.pageComponents;
+package org.factoryDesignPattern.pageComponents;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.singleDesignPattern.abstractComponent.AbstractComponent;
+import org.factoryDesignPattern.abstractComponent.AbstractComponent;
 
 public class NavigationBar extends AbstractComponent
 {

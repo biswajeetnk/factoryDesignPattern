@@ -1,4 +1,4 @@
-package org.singleDesignPattern.abstractComponent;
+package org.factoryDesignPattern.abstractComponent;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

@@ -1,4 +1,4 @@
-package org.singleDesignPattern.abstractComponent;
+package org.factoryDesignPattern.abstractComponent;
 
 public interface SearchFlightAvail
 {

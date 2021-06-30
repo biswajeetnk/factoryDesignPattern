@@ -1,0 +1,11 @@
+[
+  {
+    "origin" : "KOLKATA",
+    "destination" : "CHENNAI"
+  },
+  
+  {
+    "origin" : "RANCHI",
+    "destination" : "DISPUR"
+  }
+]

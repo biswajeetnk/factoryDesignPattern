@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.factoryDesignPattern.abstractComponent.SearchFlightAvail;
 
+import java.util.HashMap;
+
 public class MultiTrip implements SearchFlightAvail
 {
 
@@ -13,7 +15,7 @@ public class MultiTrip implements SearchFlightAvail
     }
 
     @Override
-    public void checkAvailability(String origin, String destination)
+    public void checkAvailability(HashMap<String, String> reservationDetails)
     {
         System.out.println("I am inside multi trip");
     }

@@ -7,6 +7,8 @@ import org.factoryDesignPattern.abstractComponent.StrategyFactor;
 import org.factoryDesignPattern.pageComponents.FooterNav;
 import org.factoryDesignPattern.pageComponents.NavigationBar;
 
+import java.util.HashMap;
+
 public class TravelHomePage
 {
     /*URL : https://rahulshettyacademy.com/dropdownsPractise/*/
@@ -21,7 +23,7 @@ public class TravelHomePage
         this.driver = driver;
     }
 
-    public void goTo()
+   public void goTo()
     {
         driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
     }
@@ -46,8 +48,8 @@ public class TravelHomePage
         this.searchFlightAvail = searchFlightAvail;
     }
 
-    public void checkAvailability(String origin, String destination)
+    public void checkAvailability(HashMap<String, String> reservationDetails)
     {
-        searchFlightAvail.checkAvailability(origin, destination);
+        searchFlightAvail.checkAvailability(reservationDetails);
     }
 }

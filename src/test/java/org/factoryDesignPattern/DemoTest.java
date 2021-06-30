@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.factoryDesignPattern.pageObject.TravelHomePage;
 import org.testng.annotations.Test;
 
+import java.util.HashMap;
+
 public class DemoTest
 {
     @Test
@@ -23,7 +25,7 @@ public class DemoTest
 
         //factory design pattern
         travelHomePage.setBookingStrategy("roundTrip");
-        travelHomePage.checkAvailability("origin","destination");
+        //travelHomePage.checkAvailability("origin","destination");
 
         /*travelHomePage.setBookingStrategy(new RoundTrip(driver, sectionElement));
         travelHomePage.checkAvailability("Goa","Adampur");*/

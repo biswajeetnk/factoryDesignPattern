@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.factoryDesignPattern.abstractComponent.AbstractComponent;
 import org.factoryDesignPattern.abstractComponent.SearchFlightAvail;
 
+import java.util.HashMap;
+
 public class RoundTrip extends AbstractComponent implements SearchFlightAvail
 {
 
@@ -19,24 +21,26 @@ public class RoundTrip extends AbstractComponent implements SearchFlightAvail
     }
 
     @Override
-    public void checkAvailability(String origin, String destination)
+    public void checkAvailability(HashMap<String, String> reservationDetails)
     {
         System.out.println("I am inside round trip");
         findElement(radioButton).click();
         //findElement(selectFromCity).click();
-        selectOriginCity(origin);
-        selectDestinationCity(destination);
-        findElement(checkBox).click();
-        findElement(searchButton).click();
+        selectOriginCity(reservationDetails.get("origin"));
+        selectDestinationCity(reservationDetails.get("destination"));
+        //findElement(checkBox).click();
+        //findElement(searchButton).click();
     }
 
     public void selectOriginCity(String origin)
     {
-        findElement(By.xpath("//a[contains(text(),'"+origin+"')]")).click();
+        System.out.println("I am in "+origin+" city, value entered using HashMap");
+        //findElement(By.xpath("//a[contains(text(),'"+origin+"')]")).click();
     }
 
     public void selectDestinationCity(String destination)
     {
-        findElement((By.xpath("(//a[contains(text(),'"+destination+"')])[2]"))).click();
+        System.out.println("I am in "+destination+" city, value entered using HashMap");
+        //findElement((By.xpath("(//a[contains(text(),'"+destination+"')])[2]"))).click();
     }
 }
